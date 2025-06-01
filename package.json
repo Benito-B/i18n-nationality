@@ -1,6 +1,6 @@
 {
-  "name": "i18n-nationality",
-  "version": "1.4.0",
+  "name": "@benitob/i18n-nationality",
+  "version": "1.4.1",
   "description": "i18n for nationality",
   "typings": "index.d.ts",
   "keywords": [
@@ -13,19 +13,23 @@
     "nationalities"
   ],
   "author": {
-    "name": "Mike Goebel",
-    "email": "mike@mg-develop.de"
+    "name": "Benito Barreiro",
+    "email": "benitobarreiro89@gmail.com"
   },
   "contributors": [
     {
-      "name": "Mike Goebel",
+      "name": "Benito Barreiro",
+      "email": "benitobarreiro89@gmail.com"
+    },
+    {
+      "name": "Original autor: Mike Goebel",
       "email": "mike@mg-develop.de"
     }
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sourcecode911/i18n-nationality"
+    "url": "https://github.com/Benito-B/i18n-nationality"
   },
   "dependencies": {
     "@types/diacritics": "^1.3.1",
@@ -47,6 +51,6 @@
     "test": "make test"
   },
   "bugs": {
-    "url": "https://github.com/sourcecode911/i18n-nationality/issues"
+    "url": "https://github.com/Benito-B/i18n-nationality/issues"
   }
 }

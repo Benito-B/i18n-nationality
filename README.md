@@ -1,11 +1,10 @@
 [![CircleCI](https://circleci.com/gh/sourcecode911/i18n-nationality/tree/master.svg?style=svg)](https://circleci.com/gh/sourcecode911/i18n-nationality/tree/master)
 [![npm version](https://badge.fury.io/js/i18n-nationality.svg)](https://badge.fury.io/js/i18n-nationality)
-![GitHub All Releases](https://img.shields.io/github/downloads/sourcecode911/i18n-nationality/total)
 [![Known Vulnerabilities](https://snyk.io//test/github/sourcecode911/i18n-nationality/badge.svg?targetFile=package.json)](https://snyk.io//test/github/sourcecode911/i18n-nationality?targetFile=package.json)
 [![GitHub issues](https://img.shields.io/github/issues/sourcecode911/i18n-nationality)](https://github.com/sourcecode911/i18n-nationality/issues)
 [![License](https://img.shields.io/github/license/sourcecode911/i18n-nationality)](https://github.com/sourcecode911/i18n-nationality/LICENSE)
 
-# i18n-nationality
+# @benitob/i18n-nationality
 
 Nationalities as adjectives mapped to Country codes. This repository is heavily based on the i18n-iso-countries repository by michaelwittig.
 <https://github.com/michaelwittig/node-i18n-iso-countries>
@@ -14,18 +13,18 @@ i18n for nationalities of ISO 3166-1 country codes. We support Alpha-2, Alpha-3 
 
 ## Installing
 
-Install it using npm: `npm install i18n-nationality`
+Install it using npm: `npm install @benitob/i18n-nationality`
 
 ```javascript
-var nationalities = require("i18n-nationality");
+var nationalities = require("@benitob/i18n-nationality");
 ```
 
-If you use `i18n-nationality` with Node.js your are done. If you use the package in a browser environment you also have to register the languages you want to use to minimize file size.
+If you use `@benitob/i18n-nationality` with Node.js your are done. If you use the package in a browser environment you also have to register the languages you want to use to minimize file size.
 
 ```javascript
 // Support german & english languages.
-nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
-nationalities.registerLocale(require("i18n-nationality/langs/de.json"));
+nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
+nationalities.registerLocale(require("@benitob/i18n-nationality/langs/de.json"));
 ```
 
 ## Code to Nationality
@@ -33,8 +32,8 @@ nationalities.registerLocale(require("i18n-nationality/langs/de.json"));
 ### Get the name of a nationality by its ISO 3166-1 Alpha-2, Alpha-3 or Numeric code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: countries.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: countries.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log("US (Alpha-2) => " + nationalities.getName("US", "en")); // American
 console.log("US (Alpha-2) => " + nationalities.getName("US", "de")); // Amerikanisch
 console.log("USA (Alpha-3) => " + nationalities.getName("USA", "en")); // American
@@ -44,8 +43,8 @@ console.log("USA (Numeric) => " + nationalities.getName("840", "en")); // Americ
 ### Get all names by their ISO 3166-1 Alpha-2 code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log(nationalities.getNames("en")); // { 'AF': 'Afghan', 'AL': 'Albanian', [...], 'ZM': 'Zambian', 'ZW': 'Zimbabwean' }
 ```
 
@@ -58,15 +57,17 @@ console.log(nationalities.getNames("en")); // { 'AF': 'Afghan', 'AL': 'Albanian'
 -   `it`: Italian
 -   `fi`: Finnish
 -   `nl`: Dutch
--   `es`: Español
+-   `es`: Spanish
+-   `pl`: Polish (chatgpt generated)
+-   `cs`: Czech (chatgpt generated)
 
 [List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
 ### Nationality to Code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log("American => " + nationalities.getAlpha2Code('American', 'en'));
 // American => US
 
@@ -79,8 +80,8 @@ console.log("American => " + nationalities.getAlpha3Code('American', 'en'));
 ### Convert Alpha-3 to Alpha-2 code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log("USA (Alpha-3) => " + nationalities.alpha3ToAlpha2("USA") + " (Alpha-2)");
 // USA (Alpha-3) => US (Alpha-2)
 ```
@@ -88,8 +89,8 @@ console.log("USA (Alpha-3) => " + nationalities.alpha3ToAlpha2("USA") + " (Alpha
 ### Convert Numeric to Alpha-2 code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log("840 (Numeric) => " + nationalities.numericToAlpha2("840") + " (Alpha-2)");
 // 840 (Numeric) => US (Alpha-2)
 ```
@@ -97,8 +98,8 @@ console.log("840 (Numeric) => " + nationalities.numericToAlpha2("840") + " (Alph
 ### Convert Alpha-2 to Alpha-3 code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log("DE (Alpha-2) => " + nationalities.alpha2ToAlpha3("DE") + " (Alpha-3)");
 // DE (Alpha-2) => DEU (Alpha-3)
 ```
@@ -106,8 +107,8 @@ console.log("DE (Alpha-2) => " + nationalities.alpha2ToAlpha3("DE") + " (Alpha-3
 ### Convert Numeric to Alpha-3 code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log("840 (Numeric) => " + nationalities.numericToAlpha3("840") + " (Alpha-3)");
 // 840 (Numeric) => USA (Alpha-3)
 ```
@@ -115,8 +116,8 @@ console.log("840 (Numeric) => " + nationalities.numericToAlpha3("840") + " (Alph
 ### Convert Alpha-3 to Numeric code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log(nationalities.alpha3ToNumeric("SWE"));
 // 752
 ```
@@ -124,8 +125,8 @@ console.log(nationalities.alpha3ToNumeric("SWE"));
 ### Convert Alpha-2 to Numeric code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log(nationalities.alpha2ToNumeric("SE"));
 // 752
 ```
@@ -133,8 +134,8 @@ console.log(nationalities.alpha2ToNumeric("SE"));
 ### Get all Alpha-2 codes
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log(nationalities.getAlpha2Codes());
 // { 'AF': 'AFG', 'AX': 'ALA', [...], 'ZM': 'ZMB', 'ZW': 'ZWE' }
 ```
@@ -142,8 +143,8 @@ console.log(nationalities.getAlpha2Codes());
 ### Get all Alpha-3 codes
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log(nationalities.getAlpha3Codes());
 // { 'AFG': 'AF', 'ALA': 'AX', [...], 'ZMB': 'ZM', 'ZWE': 'ZW' }
 ```
@@ -151,8 +152,8 @@ console.log(nationalities.getAlpha3Codes());
 ### Get all Numeric codes
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log(nationalities.getNumericCodes());
 // { '004': 'AF', '008': 'AL', [...], '887': 'YE', '894': 'ZM' }
 ```
@@ -160,8 +161,8 @@ console.log(nationalities.getNumericCodes());
 ### Validate country code
 
 ```javascript
-var nationalities = require("i18n-nationality");
-// in a browser environment: nationalities.registerLocale(require("i18n-nationality/langs/en.json"));
+var nationalities = require("@benitob/i18n-nationality");
+// in a browser environment: nationalities.registerLocale(require("@benitob/i18n-nationality/langs/en.json"));
 console.log(nationalities.isValid("US"), nationalities.isValid("USA"), nationalities.isValid("XX")));
 // true, true, false
 ```
